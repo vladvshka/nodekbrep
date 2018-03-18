@@ -1,0 +1,11 @@
+extends layout
+
+block content
+	//variables are set like this
+	h1 #{title}
+	ul.list-group
+		//Pug supports two primary methods of iteration: each and while
+		//each val, index in ['zero', 'one', 'two']
+		each article, i in articles
+			li.list-group-item
+				a(href="/articles/"+article._id)= article.title

@@ -1,0 +1,53 @@
+doctype html
+html
+	head
+		title KnowledgeBase
+		//link bootstrap
+		link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.css')
+		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css", integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7", crossorigin="anonymous")
+		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css", integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r", crossorigin="anonymous")
+		//Our styles
+		link(rel='stylesheet', href='/css/style.css')
+	body
+		//nav bar, removed class: .navbar-fixed-top
+		nav.navbar.navbar-inverse
+			.container
+				.navbar-header
+					button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+						span.sr-only Toggle navigation
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+					a.navbar-brand(href='#') KnowledgeBase
+				#navbar.collapse.navbar-collapse
+					ul.nav.navbar-nav
+						li
+							a(href='/') Home
+						li
+							a(href='/articles/add') Add Article
+					ul.nav.navbar-nav.navbar-right
+						li
+							a(href='/users/register') Register
+						li
+							a(href='/users/login') Login
+		//Bootstrap requires a containing element to wrap site contents
+		//Use .container for a responsive fixed width container	
+		.container
+			//flash message, 'message' is the name of template message.pug
+			!= messages('message', locals)
+			
+			//form validation
+			if errors
+				each error,i in errors
+					div(class="alert alert-danger") #{error.msg}
+					
+			//Template inheritance works via the block and extends keywords.
+			block content
+			br
+			hr
+			footer
+				p Copright &copy; 2K18
+		script(src="https://code.jquery.com/jquery-2.2.4.js", integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=", crossorigin="anonymous")
+		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js", integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS", crossorigin="anonymous")
+		script(src="/js/main.js")
+				

@@ -1,0 +1,35 @@
+{
+  "name": "nodekb",
+  "version": "1.0.0",
+  "description": "A small nodejs KB",
+  "main": "app.js",
+  "scripts": {
+    "start": "Node app is launched"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vladvshka/nodekbrep.git"
+  },
+  "keywords": [
+    "NodejsKB"
+  ],
+  "author": "Vlad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vladvshka/nodekbrep/issues"
+  },
+  "homepage": "https://github.com/vladvshka/nodekbrep#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "connect-flash": "^0.1.1",
+    "express": "^4.16.3",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.0.3",
+    "mongoose": "^5.0.10",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "pug": "^2.0.1"
+  }
+}

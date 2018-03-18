@@ -1,0 +1,23 @@
+extends layout
+
+block content
+	//variables are set like this
+	h1 Registration form
+	form(method ="POST", action="/users/register")
+		//Bootstrap
+		.form-group
+			label Name:
+			input.form-control(name='name', type='text', placeholder='Put ypour name')
+		.form-group
+			label Email:
+			input.form-control(name='email', type='text', placeholder='example@mail.email')
+		.form-group
+			label Username:
+			input.form-control(name='username', type='text', placeholder='Put your login')
+		.form-group
+			label Password:
+			input.form-control(name='password', type='password', placeholder='Put your password')
+		.form-group
+			label Confirm:
+			input.form-control(name='password2', type='password', placeholder='Repeat password')
+		input.btn.btn-primary(type='submit',value='Submit')
